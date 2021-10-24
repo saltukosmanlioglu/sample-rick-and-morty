@@ -5,14 +5,14 @@ import React, {
 import { ScrollView, Text } from 'react-native'
 
 import Header from 'components/header'
+import Loader from 'components/loader'
 import MainView from 'components/main-view'
 
-import { RickAndMortyProps } from './types'
-import * as Styled from './List.styled'
-import Loader from 'components/loader'
+import { EpisodeProps } from './types'
+import * as Styled from './Episodes.styled'
 
-const Episode: React.ComponentType = ({ navigation }: any) => {
-  const [rickAndMorty, setRickAndMorty] = useState<RickAndMortyProps>()
+const Episodes: React.ComponentType = ({ navigation }: any) => {
+  const [episodes, setEpisodes] = useState<EpisodeProps>()
 
   const [activeAccordion, setActiveAccordion] = useState<number>(1)
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -23,8 +23,8 @@ const Episode: React.ComponentType = ({ navigation }: any) => {
       method: 'GET'
     })
       .then(res => res.json())
-      .then((data: RickAndMortyProps) => {
-        setRickAndMorty(data)
+      .then((data: EpisodeProps) => {
+        setEpisodes(data)
         setIsLoading(false)
       })
       .catch(err => {
@@ -61,7 +61,7 @@ const Episode: React.ComponentType = ({ navigation }: any) => {
         {isLoading ? (
           <Loader />
         ) :
-          rickAndMorty?.results.map((item, index) => (
+          episodes?.results.map((item, index) => (
             <Styled.Accordion
               key={item.id}
               onPress={() => handleAccordionClick(item.id)}
@@ -86,4 +86,4 @@ const Episode: React.ComponentType = ({ navigation }: any) => {
   )
 }
 
-export default Episode
+export default Episodes

@@ -12,7 +12,7 @@ import MainView from 'components/main-view'
 
 import { Episode } from './types'
 
-const Detail: React.ComponentType = ({ navigation }: any) => {
+const EpisodeDetail: React.ComponentType = ({ navigation }: any) => {
   const [episode, setEpisode] = useState<Episode>()
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -70,4 +70,4 @@ const Detail: React.ComponentType = ({ navigation }: any) => {
   )
 }
 
-export default Detail
+export default EpisodeDetail

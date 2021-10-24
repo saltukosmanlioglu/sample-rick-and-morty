@@ -3,19 +3,19 @@ import React, {
   useEffect,
   useState
 } from 'react'
-import { Image, Text } from 'react-native'
+import { Text } from 'react-native'
 import { useRoute } from '@react-navigation/core'
 
 import Header from 'components/header'
 import Loader from 'components/loader'
 import MainView from 'components/main-view'
 
-import { Character } from './types'
-import * as Styled from './Episode.styled'
+import { Character as CharacterProps } from './types'
 import { GenderEnum } from './enum'
+import * as Styled from './Character.styled'
 
-const Episode: React.ComponentType = () => {
-  const [character, setCharacter] = useState<Character>()
+const Character: React.ComponentType = () => {
+  const [character, setCharacter] = useState<CharacterProps>()
 
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
@@ -67,4 +67,4 @@ const Episode: React.ComponentType = () => {
   )
 }
 
-export default Episode
+export default Character

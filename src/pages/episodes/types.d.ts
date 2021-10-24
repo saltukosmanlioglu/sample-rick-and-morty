@@ -1,6 +1,6 @@
-export interface ListProps { }
+export interface EpisodesProps { }
 
-export interface RickAndMortyProps {
+export interface EpisodeProps {
   info: Info
   results: Array<Results>
 }

@@ -1,4 +1,4 @@
-export interface DetailProps { }
+export interface EpisodeDetailProps { }
 
 export interface Episode {
   id: number

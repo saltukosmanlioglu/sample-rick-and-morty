@@ -1,4 +1,4 @@
-import styled from "styled-components/native";
+import styled from 'styled-components/native'
 
 export const CharacterImage = styled.Image`
   width: 100%;

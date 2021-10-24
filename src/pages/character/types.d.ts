@@ -1,4 +1,4 @@
-export interface EpisodeProps { }
+export interface CharacterProps { }
 
 export interface Character {
   id: number

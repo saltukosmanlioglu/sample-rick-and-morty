@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { routes } from './src/routes/routes'
 
 const Stack = createNativeStackNavigator()
-const INITIAL_ROUTE_NAME = 'List'
+const INITIAL_ROUTE_NAME = 'Episodes'
 
 export default function App() {
   return (

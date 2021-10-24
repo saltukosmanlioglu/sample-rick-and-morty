@@ -1,11 +1,11 @@
-import Detail from '../pages/detail'
-import Episode from '../pages/episode'
-import List from '../pages/list'
+import EpisodeDetail from '../pages/episode-detail'
+import Character from '../pages/character'
+import Episodes from '../pages/episodes'
 
 import { Routes } from './types'
 
 export const routes: Routes[] = [
-  { name: 'Detail', component: Detail },
-  { name: 'Episode', component: Episode },
-  { name: 'List', component: List }
+  { name: 'EpisodeDetail', component: EpisodeDetail },
+  { name: 'Character', component: Character },
+  { name: 'Episodes', component: Episodes }
 ]
