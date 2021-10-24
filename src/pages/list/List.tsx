@@ -1,11 +1,15 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { Text } from 'react-native'
+
+import Header from '../../components/header'
+import MainView from '../../components/main-view'
 
 const Episode: React.FunctionComponent = () => {
   return (
-    <View>
-      <Text>sadsa</Text>
-    </View>
+    <MainView>
+      <Header title="List" />
+      <Text>sas</Text>
+    </MainView>
   )
 }
 
