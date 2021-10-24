@@ -6,12 +6,12 @@ import React, {
 import { Text } from 'react-native'
 import { useRoute } from '@react-navigation/core'
 
+import { GenderEnum } from 'app/shared'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import MainView from 'components/main-view'
 
 import { Character as CharacterProps } from './types'
-import { GenderEnum } from './enum'
 import * as Styled from './Character.styled'
 
 const Character: React.ComponentType = () => {

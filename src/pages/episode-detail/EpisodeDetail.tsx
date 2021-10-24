@@ -43,7 +43,7 @@ const EpisodeDetail: React.ComponentType = ({ navigation }: any) => {
 
   const handleCharacterClick = (character: string) => {
     const id = character.split('/')
-    navigation.navigate('Episode', {
+    navigation.navigate('Character', {
       id: id[id.length - 1]
     })
   }

@@ -48,15 +48,15 @@ const Episodes: React.ComponentType = ({ navigation }: any) => {
   }
 
   const handleDetailClick = (id: number) => {
-    navigation.navigate('Detail', {
+    navigation.navigate('EpisodeDetail', {
       id,
-      title: 'Rick & Morty'
+      title: 'Bölümler'
     })
   }
 
   return (
     <MainView>
-      <Header title="Rick & Morty" />
+      <Header title="Bölümler" />
       <ScrollView>
         {isLoading ? (
           <Loader />
