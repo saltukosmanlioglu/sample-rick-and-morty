@@ -6,6 +6,7 @@ import React, {
 import { Text, TouchableOpacity } from 'react-native'
 import { useRoute } from '@react-navigation/core'
 
+import { lastIndexSplit } from 'app/functions'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import MainView from 'components/main-view'
@@ -42,9 +43,8 @@ const EpisodeDetail: React.ComponentType = ({ navigation }: any) => {
   }, [getEpisode])
 
   const handleCharacterClick = (character: string) => {
-    const id = character.split('/')
     navigation.navigate('Character', {
-      id: id[id.length - 1]
+      id: lastIndexSplit('/', character)
     })
   }
 

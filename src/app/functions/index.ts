@@ -1,0 +1,1 @@
+export { lastIndexSplit } from './string'
