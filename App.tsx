@@ -3,9 +3,7 @@ import { SafeAreaView } from 'react-native'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 
-import Detail from './src/pages/detail'
-import Episode from './src/pages/episode'
-import List from './src/pages/list'
+import { routes } from './src/routes/routes'
 
 const Stack = createNativeStackNavigator()
 const INITIAL_ROUTE_NAME = 'List'
@@ -18,9 +16,13 @@ export default function App() {
           initialRouteName={INITIAL_ROUTE_NAME}
           screenOptions={{ headerShown: false }}
         >
-          <Stack.Screen name="Detail" component={Detail} />
-          <Stack.Screen name="Episode" component={Episode} />
-          <Stack.Screen name="List" component={List} />
+          {routes.map((route, index) => (
+            <Stack.Screen
+              key={index}
+              component={route.component}
+              name={route.name}
+            />
+          ))}
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>

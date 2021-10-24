@@ -6,8 +6,9 @@ import MainView from 'components/main-view'
 
 import { RickAndMortyProps } from './types'
 import * as Styled from './List.styled'
+import Loader from 'components/loader'
 
-const Episode: React.FunctionComponent = ({ navigation }: any) => {
+const Episode: React.ComponentType = ({ navigation }: any) => {
   const [rickAndMorty, setRickAndMorty] = useState<RickAndMortyProps>()
 
   const [activeAccordion, setActiveAccordion] = useState<number>(1)
@@ -53,7 +54,7 @@ const Episode: React.FunctionComponent = ({ navigation }: any) => {
       <Header title="Rick & Morty" />
       <ScrollView>
         {isLoading ? (
-          <Styled.Loader size="large" color="#00bfca" />
+          <Loader />
         ) :
           rickAndMorty?.results.map((item, index) => (
             <Styled.Accordion

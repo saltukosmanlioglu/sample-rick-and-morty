@@ -1,7 +1,7 @@
 import React from 'react'
 import { View } from 'react-native'
 
-const List: React.FunctionComponent = () => {
+const List: React.ComponentType = () => {
   return (
     <View>
             
