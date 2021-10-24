@@ -1,11 +1,13 @@
 import React from 'react'
-import { View } from 'react-native'
+
+import Header from 'components/header'
+import MainView from 'components/main-view'
 
 const Detail: React.FunctionComponent = () => {
   return (
-    <View>
-            
-    </View>
+    <MainView>
+      <Header title="Detay" />
+    </MainView>
   )
 }
 
