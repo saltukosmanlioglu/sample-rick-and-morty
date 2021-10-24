@@ -5,7 +5,11 @@ import { LoaderProps } from './types'
 
 const Loader: React.FunctionComponent<LoaderProps> = () => {
   return (
-    <ActivityIndicator size="large" color="#00bfca" />
+    <ActivityIndicator
+      style={{ marginTop: 20}}
+      color="#00bfca"
+      size="large"
+    />
   )
 }
 

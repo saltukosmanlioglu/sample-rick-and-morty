@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, {
+  useEffect,
+  useState
+} from 'react'
 import { ScrollView, Text } from 'react-native'
 
 import Header from 'components/header'
@@ -16,7 +19,9 @@ const Episode: React.ComponentType = ({ navigation }: any) => {
 
   const getRickAndMorty = () => {
     setIsLoading(true)
-    fetch('https://rickandmortyapi.com/api/episode')
+    fetch('https://rickandmortyapi.com/api/episode', {
+      method: 'GET'
+    })
       .then(res => res.json())
       .then((data: RickAndMortyProps) => {
         setRickAndMorty(data)
