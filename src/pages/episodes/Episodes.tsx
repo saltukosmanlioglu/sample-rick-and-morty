@@ -1,4 +1,5 @@
 import React, {
+  useCallback,
   useEffect,
   useState
 } from 'react'
@@ -7,6 +8,7 @@ import { ScrollView, Text } from 'react-native'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import MainView from 'components/main-view'
+import Pager from 'components/pager'
 
 import { EpisodeProps } from './types'
 import * as Styled from './Episodes.styled'
@@ -14,12 +16,13 @@ import * as Styled from './Episodes.styled'
 const Episodes: React.ComponentType = ({ navigation }: any) => {
   const [episodes, setEpisodes] = useState<EpisodeProps>()
 
-  const [activeAccordion, setActiveAccordion] = useState<number>(1)
+  const [activeAccordion, setActiveAccordion] = useState<number>(0)
+  const [pageIndex, setPageIndex] = useState<number>(1)
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
-  const getRickAndMorty = () => {
+  const getEpisodes = useCallback(() => {
     setIsLoading(true)
-    fetch('https://rickandmortyapi.com/api/episode', {
+    fetch(`https://rickandmortyapi.com/api/episode?page=${pageIndex}`, {
       method: 'GET'
     })
       .then(res => res.json())
@@ -33,13 +36,13 @@ const Episodes: React.ComponentType = ({ navigation }: any) => {
       .finally(() => {
         setIsLoading(false)
       })
-  }
+  },[pageIndex])
 
   useEffect(() => {
     setTimeout(() => {
-      getRickAndMorty()
+      getEpisodes()
     }, 1000)
-  }, [])
+  }, [getEpisodes])
 
   const handleAccordionClick = (id: number) => {
     activeAccordion === id
@@ -81,6 +84,10 @@ const Episodes: React.ComponentType = ({ navigation }: any) => {
             </Styled.Accordion>
           ))
         }
+        <Pager
+          pages={3}
+          onChange={(index) => setPageIndex(index)}
+        />
       </ScrollView>
     </MainView>
   )
